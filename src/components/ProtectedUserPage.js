@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { getUser } from "../redux/selectors";
 import { setUser } from "../redux/actions";
+import ToDoListController from "./ToDoListController";
 
 function ProtectedUserPage({ user, setUser: setUserData }) {
 
@@ -17,27 +18,30 @@ function ProtectedUserPage({ user, setUser: setUserData }) {
     setSurname(e.target.value);
   }
 
-  return <div>
+  return <>
+  <div className='user-info'>
     <div>
       <label htmlFor="name">Name:</label>
-      <input type="text" id="name" onChange={onChangeInputName} />
+      <input type="text" id="name" onChange={onChangeInputName} className="input"/>
     </div>
     <div>
       <label htmlFor="surname">Surname:</label>
-      <input type="text" id="surname" onChange={onChangeInputSurname} />
+      <input type="text" id="surname" onChange={onChangeInputSurname} className="input"/>
     </div>
     <div>
       <span>Name:</span>
-      <span>{user.name}</span>
+      <span className="user">{user.name}</span>
     </div>
     <div>
       <span>Surname:</span>
-      <span>{user.surname}</span>
+      <span className="user">{user.surname}</span>
     </div>
     <button onClick={() => {
       setUserData({ name, surname });
     }}>Set User Data</button>
   </div>
+  <ToDoListController/>
+  </>
 }
 
 const mapStateToProps = (state) => ({

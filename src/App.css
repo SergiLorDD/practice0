@@ -1,7 +1,170 @@
-nav {
-  display: flex;
+.App {
+  min-height: 100vh;
+  max-width: 100vw;
+  margin: 1% 5%;
 }
 
-nav > * {
-  margin-right: 1rem;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  box-shadow: 0 0 1rem 0 rgba(41, 39, 39, 0.2);
+  border-radius: 3px;
+  z-index: 1;
+  background: inherit;
+  /* overflow: hidden; */
+}
+nav::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(241, 241, 241, 0.5);
+  filter: blur(10px);
+  margin: -20px;
+}
+nav a {
+  padding: 5px;
+  color: #000;
+}
+button {
+  margin-left: 15px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 5px 15px;
+  box-shadow: 1px 3px 6px rgb(0 0 0 / 50%);
+}
+button:active {
+  box-shadow: inset 1px 3px 6px rgb(0 0 0 / 50%);
+}
+.nav_btn .active-btn {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+.nav_btn .active-btn:active {
+  box-shadow: inset 1px 3px 8px rgb(255 255 255 / 75%);
+}
+.active-link {
+  color: rgb(3, 3, 124);
+  border: 1px solid rgb(172, 172, 172);
+  border-radius: 20px;
+}
+
+.user-info {
+  margin: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 10vh;
+}
+.user-info div {
+  margin-top: 8px;
+}
+.user-info button {
+  margin-top: 15px;
+}
+.input {
+  margin-left: 10px;
+  box-shadow: inset 1px 3px 5px rgb(0 0 0 / 50%);
+  width: 10rem;
+}
+.input:target,
+.input:focus {
+  box-shadow: 1px 3px 5px rgb(0 0 0 / 50%);
+}
+.user {
+  color: rgb(3, 3, 124);
+  margin-left: 10px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 15px auto;
+
+  position: relative;
+  box-shadow: 0 0 1rem 0 rgba(41, 39, 39, 0.15);
+  border-radius: 3px;
+  z-index: 1;
+  background: inherit;
+}
+.todo-list::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 30px rgb(241 241 241 / 30%);
+  filter: blur(13px);
+  margin: -20px;
+}
+.todo-list-title {
+  align-self: center;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.item-text {
+  flex-basis: 100%;
+  position: relative;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  padding: 9px 5px;
+  margin: 0;
+  color: #fff;
+}
+.item-subtext {
+  position: absolute;
+  right: 0;
+  font-size: 0.8rem;
+  color: #cccaca;
+}
+
+.todo-form {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+.todo-input {
+  flex-basis: 100%;
+  height: 1.7rem;
+  font-size: 1.2rem;
+}
+
+.btn-submit {
+  background: center / contain no-repeat
+    url(./assets/Checkmark_icon-icons.com_71846.png);
+  background-color: #fff;
+  width: 34px;
+  height: 34px;
+}
+
+.btn-delete {
+  background: center / contain no-repeat
+    url(./assets/4115230-cancel-close-cross-delete_114048.png);
+  background-color: #fff;
+  width: 34px;
+  height: 34px;
+}
+
+.not-authorized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 50vh;
 }

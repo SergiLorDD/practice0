@@ -1,1 +1,5 @@
 export const SET_USER = "SET_USER";
+
+export const SET_TODOITEM = "SET_TODOITEM";
+export const CHANGE_TODOITEM = "CHANGE_TODOITEM";
+export const DELETE_TODOITEM = "DELETE_TODOITEM";

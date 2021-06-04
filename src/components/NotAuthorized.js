@@ -1,6 +1,6 @@
 export default function NotAuthorized() {
   return (
-    <div>
+    <div className="not-authorized">
       403
     </div>
   )
